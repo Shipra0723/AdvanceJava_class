@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+<h2>Admin Login</h2>
+
+<p id="message"></p>
+
+<form action="login" method="post">
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    <br><br>
+
+    <label>Password:</label>
+    <input type="password" name="password" required>
+    <br><br>
+
+    <input type="submit" value="Login">
+
+</form>
+
+<br>
+
+<a href="home">Back to Home</a>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("msg") === "fail") {
+        document.getElementById("message").innerText = "Invalid Email or Password!";
+    }
+</script>
+
+</body>
+</html>
